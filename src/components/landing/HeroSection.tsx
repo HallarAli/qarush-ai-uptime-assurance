@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroDashboard from "@/assets/hero-dashboard.jpg";
+import DashboardMockup from "./DashboardMockup";
 
 const HeroSection = () => (
   <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
@@ -12,7 +12,7 @@ const HeroSection = () => (
     </div>
 
     <div className="container-narrow relative z-10">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
         {/* Left content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,52 +55,14 @@ const HeroSection = () => (
           </p>
         </motion.div>
 
-        {/* Right visual — hero image */}
+        {/* Right visual */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative"
+          className="hidden lg:block"
         >
-          <div className="relative rounded-xl overflow-hidden glow-md">
-            <img
-              src={heroDashboard}
-              alt="Qarush AI monitoring dashboard showing website analytics and flow health"
-              width={1280}
-              height={896}
-              className="w-full h-auto rounded-xl"
-            />
-            {/* Overlay glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none rounded-xl" />
-          </div>
-
-          {/* Floating status badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="absolute -bottom-4 left-6 glass-card rounded-lg px-4 py-3 flex items-center gap-3"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <div>
-              <p className="text-xs font-medium">All flows healthy</p>
-              <p className="text-[10px] text-text-dim">247 checks passed</p>
-            </div>
-          </motion.div>
-
-          {/* Floating alert badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.0, duration: 0.5 }}
-            className="absolute -top-3 right-6 glass-card rounded-lg px-4 py-3 flex items-center gap-3"
-          >
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <div>
-              <p className="text-xs font-medium">1 warning detected</p>
-              <p className="text-[10px] text-text-dim">Contact form — 2m ago</p>
-            </div>
-          </motion.div>
+          <DashboardMockup />
         </motion.div>
       </div>
     </div>
