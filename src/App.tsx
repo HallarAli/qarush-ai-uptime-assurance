@@ -7,6 +7,9 @@ import Index from "./pages/Index.tsx";
 import Login from "./pages/Login.tsx";
 import Signup from "./pages/Signup.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import DashboardLayout from "./components/dashboard/DashboardLayout.tsx";
+import DashboardOverview from "./pages/DashboardOverview.tsx";
+import DashboardPlaceholder from "./pages/DashboardPlaceholder.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +23,14 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<DashboardOverview />} />
+            <Route path="sites" element={<DashboardPlaceholder />} />
+            <Route path="new-test" element={<DashboardPlaceholder />} />
+            <Route path="history" element={<DashboardPlaceholder />} />
+            <Route path="settings" element={<DashboardPlaceholder />} />
+            <Route path="billing" element={<DashboardPlaceholder />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
