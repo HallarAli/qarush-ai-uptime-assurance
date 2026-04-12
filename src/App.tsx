@@ -9,7 +9,12 @@ import Signup from "./pages/Signup.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import DashboardLayout from "./components/dashboard/DashboardLayout.tsx";
 import DashboardOverview from "./pages/DashboardOverview.tsx";
-import DashboardPlaceholder from "./pages/DashboardPlaceholder.tsx";
+import MonitoredSites from "./pages/MonitoredSites.tsx";
+import NewTest from "./pages/NewTest.tsx";
+import History from "./pages/History.tsx";
+import ReportsPage from "./pages/ReportsPage.tsx";
+import SettingsPage from "./pages/SettingsPage.tsx";
+import BillingPage from "./pages/BillingPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,11 +30,12 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardOverview />} />
-            <Route path="sites" element={<DashboardPlaceholder />} />
-            <Route path="new-test" element={<DashboardPlaceholder />} />
-            <Route path="history" element={<DashboardPlaceholder />} />
-            <Route path="settings" element={<DashboardPlaceholder />} />
-            <Route path="billing" element={<DashboardPlaceholder />} />
+            <Route path="sites" element={<MonitoredSites />} />
+            <Route path="new-test" element={<NewTest />} />
+            <Route path="history" element={<History />} />
+            <Route path="reports" element={<ReportsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+            <Route path="billing" element={<BillingPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
