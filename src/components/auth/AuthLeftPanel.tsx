@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import authImage from "@/assets/auth-security.png";
 
 interface AuthLeftPanelProps {
   headline: string;
@@ -27,9 +28,14 @@ const AuthLeftPanel = ({ headline, subline }: AuthLeftPanelProps) => {
         }}
       />
 
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-primary/20 blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-purple-500/15 blur-[100px]" />
+      {/* Auth image */}
+      <div className="absolute inset-0 flex items-center justify-center p-16 pt-24">
+        <img
+          src={authImage}
+          alt="Secure authentication"
+          className="w-full max-w-md h-auto object-contain opacity-80 drop-shadow-2xl"
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between p-12 w-full">
