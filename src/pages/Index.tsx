@@ -3,7 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import ProblemSection from "@/components/landing/ProblemSection";
 import HowItWorks from "@/components/landing/HowItWorks";
 import FeaturesSection from "@/components/landing/FeaturesSection";
-import DashboardPreview from "@/components/landing/DashboardPreview";
+import ProtectFixSection from "@/components/landing/ProtectFixSection";
 import ReportTypes from "@/components/landing/ReportTypes";
 import TargetUsers from "@/components/landing/TargetUsers";
 import PricingSection from "@/components/landing/PricingSection";
@@ -16,8 +16,8 @@ const Index = () => (
     <HeroSection />
     <ProblemSection />
     <HowItWorks />
+    <ProtectFixSection />
     <FeaturesSection />
-    <DashboardPreview />
     <ReportTypes />
     <TargetUsers />
     <PricingSection />
